@@ -1,0 +1,286 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("SkidHub by Leo", "DarkTheme")
+local Tab = Window:NewTab("Aimbot/Semi")
+local Section = Tab:NewSection("Hitbox expander")
+Section:NewButton("Execute", "It expands hitboxes to make it easier to hit", function()
+_G.HeadSize = 5 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.Head.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.Head.Transparency = 1 v.Character.Head.BrickColor = BrickColor.new("Really blue") v.Character.Head.Material = "Neon" v.Character.Head.CanCollide = false end) end end end end)
+
+_G.HumanoidRootPartSize = 5 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HumanoidRootPartSize,_G.HumanoidRootPartSize,_G.HumanoidRootPartSize) v.Character.HumanoidRootPart.Transparency = 1 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+    print("Clicked")
+end)
+local Tab = Window:NewTab("Offsale Unboxer")
+local Section = Tab:NewSection("Royal Red (10K credits)")
+Section:NewButton("Execute", "Buys Royale Red", function()
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(66, "Chair Skins", "Winter"))
+    print("Clicked")
+end)
+local Section = Tab:NewSection("Candy crown (10K credits)")
+Section:NewButton("Execute", "Buys Candy Crown", function()
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(66, "Knife Skins", "Winter Gift"))
+    print("Clicked")
+end)
+local Section = Tab:NewSection("Antlers case (10K credits)")
+Section:NewButton("Execute", "Buys Antler case", function()
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(66, "Accessories", "Knife Antlers"))
+    print("Clicked")
+end)
+local Section = Tab:NewSection("/e rain (3 credits)")
+Section:NewButton("Execute", "Buys /e rain", function()
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(66, "Animations", "Exclusive")
+    print("Clicked")
+end)
+local Tab = Window:NewTab("Gun Gamemodes")
+local Section = Tab:NewSection("Kills Everybody (works only when you have gun)")
+Section:NewButton("Execute", "When you have gun, u kill everybody", function()
+while wait() do
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(16, "secret")
+wait()
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(30, v)
+end
+end
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("(doesnt work yet) Forces PUBLIC for every1 in Breaking Point gamemode")
+Section:NewButton("Execute", "Everyone picks PUBLIC automatically", function()
+
+print("Clicked")
+end)
+local Section = Tab:NewSection("(doesnt work yet) Forces SECRET for every1 in Breaking Point gamemode")
+Section:NewButton("Execute", "Everyone picks SECRET automatically", function()
+
+print("Clicked")
+end)
+local Tab = Window:NewTab("VIP things")
+local Section = Tab:NewSection("Equips VIP chair Stellar")
+Section:NewButton("Execute", "Equips VIP chair Stellar", function()
+local args = {
+    [1] = 55,
+    [2] = "Chair Skins",
+    [3] = "Space",
+    [4] = "Stellar"
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+print("Clicked")
+end)
+local Section = Tab:NewSection("Equips VIP chair Blue Galaxy")
+Section:NewButton("Execute", "Equips VIP chair Blue Galaxy", function()
+local args = {
+    [1] = 55,
+    [2] = "Chair Skins",
+    [3] = "Space",
+    [4] = "Blue Galaxy"
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+print("Clicked")
+end)
+local Section = Tab:NewSection("Equips Display Knife 2 (standing knife)")
+Section:NewButton("Execute", "Equips Display Knife 2 (standing knife)", function()
+local args = {
+    [1] = 53,
+    [2] = "Display Knife 2",
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+print("Clicked")
+end)
+local Tab = Window:NewTab("Light")
+local Section = Tab:NewSection("Light always on")
+Section:NewButton("Execute", "Nigga fuck u dont understand", function()
+local light = game.Workspace.light
+local pointlight = light.PointLight
+
+if light then
+    while true do
+        if pointlight.Enabled == false then
+            light.Material = Enum.Material.Neon
+            pointlight.Enabled = true
+        end
+        wait(0.05)
+    end
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Light color changes back to normal")
+Section:NewButton("Execute", "Changes color", function()
+local light = game.Workspace.light
+local interlights = game.Workspace.lights
+local pointlight = light.PointLight
+
+R = 255
+G = 255
+B = 255
+
+light.Color = Color3.fromRGB(R, G, B)
+for _, l in ipairs(interlights:GetChildren()) do
+    l.Color = Color3.fromRGB(R, G, B)
+    l.SpotLight.Color = Color3.fromRGB(R, G, B)
+end
+
+while true do
+    pointlight.Color = Color3.fromRGB(R, G, B)
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Hard mode")
+Section:NewButton("Execute", "Changes color", function()
+local light = game.Workspace.light
+local interlights = game.Workspace.lights
+local pointlight = light.PointLight
+
+R = 0
+G = 0
+B = 0
+
+light.Color = Color3.fromRGB(R, G, B)
+for _, l in ipairs(interlights:GetChildren()) do
+    l.Color = Color3.fromRGB(R, G, B)
+    l.SpotLight.Color = Color3.fromRGB(R, G, B)
+end
+
+while true do
+    pointlight.Color = Color3.fromRGB(R, G, B)
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Light color changes to Pink (only for u)")
+Section:NewButton("Execute", "Changes color", function()
+local light = game.Workspace.light
+local interlights = game.Workspace.lights
+local pointlight = light.PointLight
+
+R = 255
+G = 102
+B = 222
+
+light.Color = Color3.fromRGB(R, G, B)
+for _, l in ipairs(interlights:GetChildren()) do
+    l.Color = Color3.fromRGB(R, G, B)
+    l.SpotLight.Color = Color3.fromRGB(R, G, B)
+end
+
+while true do
+    pointlight.Color = Color3.fromRGB(R, G, B)
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Light color changes to Red (only for u)")
+Section:NewButton("Execute", "Changes color", function()
+local light = game.Workspace.light
+local interlights = game.Workspace.lights
+local pointlight = light.PointLight
+
+R = 255
+G = 0
+B = 0
+
+light.Color = Color3.fromRGB(R, G, B)
+for _, l in ipairs(interlights:GetChildren()) do
+    l.Color = Color3.fromRGB(R, G, B)
+    l.SpotLight.Color = Color3.fromRGB(R, G, B)
+end
+
+while true do
+    pointlight.Color = Color3.fromRGB(R, G, B)
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Light color changes to Green (only for u)")
+Section:NewButton("Execute", "Changes color", function()
+local light = game.Workspace.light
+local interlights = game.Workspace.lights
+local pointlight = light.PointLight
+
+R = 0
+G = 255
+B = 0
+
+light.Color = Color3.fromRGB(R, G, B)
+for _, l in ipairs(interlights:GetChildren()) do
+    l.Color = Color3.fromRGB(R, G, B)
+    l.SpotLight.Color = Color3.fromRGB(R, G, B)
+end
+
+while true do
+    pointlight.Color = Color3.fromRGB(R, G, B)
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Light color changes to Blue (only for u)")
+Section:NewButton("Execute", "Changes color", function()
+local light = game.Workspace.light
+local interlights = game.Workspace.lights
+local pointlight = light.PointLight
+
+R = 0
+G = 0
+B = 255
+
+light.Color = Color3.fromRGB(R, G, B)
+for _, l in ipairs(interlights:GetChildren()) do
+    l.Color = Color3.fromRGB(R, G, B)
+    l.SpotLight.Color = Color3.fromRGB(R, G, B)
+end
+
+while true do
+    pointlight.Color = Color3.fromRGB(R, G, B)
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Section = Tab:NewSection("Light range changes")
+Section:NewButton("Execute", "Bruh fuck u dont understand", function()
+local light = game.Workspace.light
+local pointlight = light.PointLight
+
+while true do
+    pointlight.Range = 60
+    wait(0.05)
+end
+print("Clicked")
+end)
+local Tab = Window:NewTab("Other")
+local Section = Tab:NewSection("Self duo in duos")
+Section:NewButton("Execute", "You are going to be paired alone, with yourself only", function()
+local args = {[1] = 39, [2] = game:GetService("Players").LocalPlayer}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+print("Clicked")
+end)
+local Section = Tab:NewSection("Noclip")
+Section:NewButton("Execute", "Self explanatory", function()
+local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+print("Clicked")
+end)
